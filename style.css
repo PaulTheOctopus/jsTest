@@ -41,3 +41,17 @@
   a.red {background-color: red}
   a.green {background-color: green}
   a.blue {background-color: blue}
+
+  .animate-all {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14pt;
+    text-decoration: none;
+    color: black;
+    height: 40px;
+    background-color: cornflowerblue;
+  }
+  .animate-all:hover {
+    color: red;
+  }
