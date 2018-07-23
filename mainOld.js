@@ -22,8 +22,22 @@ function colorizeContainer(div) {
     }
 }
 
+/*animate reverse  color buttons
 function animateAll() {
-    //use colorizeContainer func to animate all containers simultaneously
+    //I noticed that you use flex and I decided just change the flex-flow
+    let uls = document.getElementsByTagName("ul");
+    for (let i = 0; i < uls.length; i++) {
+        if (uls[i].style.flexFlow != 'row-reverse') {
+            //use self-invoking arrow func in this case for make code shorter (hope that your browser supported it)
+            ((index) => {setTimeout( () => {uls[i].style.flexFlow = 'row-reverse'}, 2000*i)})(i);
+        }else {
+            ((index) => {setTimeout( () => {uls[i].style.flexFlow = 'row'}, 2000*i)})(i);
+        }
+    }
+}*/
+
+function animateAll() {
+    //I noticed that you use flex and I decided just change the flex-flow
     let as = document.getElementsByTagName("a");
     let asArr = [];
     asArr.push(as);
@@ -32,5 +46,15 @@ function animateAll() {
         ((index) => {setTimeout( () => {colorizeContainer(asArr[0][i+3])}, 2000*i)})(i);
         ((index) => {setTimeout( () => {colorizeContainer(asArr[0][i+6])}, 2000*i)})(i);
     }
+    /*let uls = document.getElementsByTagName("ul");
+    console.log(uls);
+    for (let i = 0; i < uls.length; i++) {
+        if (uls[i].style.flexFlow != 'row-reverse') {
+            //use self-invoking arrow func in this case for make code shorter (hope that your browser supported it)
+            ((index) => {setTimeout( () => {uls[i].style.flexFlow = 'row-reverse'}, 2000*i)})(i);
+        }else {
+            ((index) => {setTimeout( () => {uls[i].style.flexFlow = 'row'}, 2000*i)})(i);
+        }
+    }*/
 }
 
